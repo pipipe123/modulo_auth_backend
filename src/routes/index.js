@@ -1,6 +1,13 @@
 const { Router } = require('express');
+const authRoutes = require('./auth');
+const avatarRoutes = require('./avatars');
+const internalRoutes = require('./internal');
 
 const router = Router();
+
+router.use('/auth', authRoutes);
+router.use('/auth/internal', internalRoutes);
+router.use('/avatars', avatarRoutes);
 
 /**
  * @openapi
